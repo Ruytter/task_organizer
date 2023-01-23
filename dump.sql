@@ -94,7 +94,7 @@ CREATE TABLE public.tarefa (
     id integer NOT NULL,
     "responsavelId" integer NOT NULL,
     name text NOT NULL,
-    "descrição" text NOT NULL,
+    descricao text NOT NULL,
     dia timestamp without time zone DEFAULT now() NOT NULL,
     status text NOT NULL,
     "createdAt" timestamp without time zone DEFAULT now() NOT NULL
@@ -149,12 +149,14 @@ ALTER TABLE ONLY public.tarefa ALTER COLUMN id SET DEFAULT nextval('public.taref
 INSERT INTO public.responsavel VALUES (1, 'Ruytter', 'ruytter@gmail.com', '$2b$10$WyLIPlU.rei5ZzIGlLmtZONyj2XyBivL5cHQWhi6VNxhvfapTgfSy', '2023-01-23 11:30:16.865449');
 INSERT INTO public.responsavel VALUES (2, 'josé', 'jose@gmail.com', '$2b$10$nsmJ/O9SnuQ822HF8P0nM.XzmLpLF37DpbCCGiVCxpvEOVLqr3ypu', '2023-01-23 11:32:59.765715');
 INSERT INTO public.responsavel VALUES (3, 'Robson', 'robson@gmail.com', '$2b$10$rYy3YrM/4jbr9JtfsLXgLe/BNbNHcmSMfaNPojMXE7uNGg1lvNnaC', '2023-01-23 11:33:59.725845');
+INSERT INTO public.responsavel VALUES (4, 'Pedro', 'pedro@gmail.com', '$2b$10$V7AGQna7sYTlhno3F42wA.q0IUYYTY3jOq4/DwyE15VvOHBufDjE.', '2023-01-23 14:53:23.974698');
 
 
 --
 -- Data for Name: sessions; Type: TABLE DATA; Schema: public; Owner: -
 --
 
+INSERT INTO public.sessions VALUES (1, 4, '32d72173-f081-4d23-b475-d1b15d5de752', true, '2023-01-23 14:53:38.412563');
 
 
 --
@@ -167,21 +169,21 @@ INSERT INTO public.responsavel VALUES (3, 'Robson', 'robson@gmail.com', '$2b$10$
 -- Name: responsavel_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.responsavel_id_seq', 3, true);
+SELECT pg_catalog.setval('public.responsavel_id_seq', 4, true);
 
 
 --
 -- Name: sessions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.sessions_id_seq', 1, false);
+SELECT pg_catalog.setval('public.sessions_id_seq', 1, true);
 
 
 --
 -- Name: tarefa_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.tarefa_id_seq', 1, false);
+SELECT pg_catalog.setval('public.tarefa_id_seq', 1, true);
 
 
 --

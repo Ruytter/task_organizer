@@ -56,20 +56,20 @@
     "containerId": "",
     "name": "http://localhost:4000",
     "url": "http://localhost:4000/1",
-    "method": "PUT",
+    "method": "DELETE",
     "sortNum": 0,
     "created": "2023-01-21T13:55:44.761Z",
-    "modified": "2023-01-23T15:26:39.740Z",
+    "modified": "2023-01-23T18:18:42.495Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"status\": \"em espera\"\n}",
+      "raw": "{\n  \"status\": \"em execucao\"\n}",
       "form": []
     },
     "auth": {
       "type": "bearer",
-      "bearer": "82cccacf-211b-4942-9ec2-c4eb461a6ea4"
+      "bearer": "32d72173-f081-4d23-b475-d1b15d5de752"
     },
     "tests": []
   },
@@ -195,7 +195,7 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-01-22T01:34:59.702Z",
-    "modified": "2023-01-23T15:48:46.555Z",
+    "modified": "2023-01-23T17:53:38.441Z",
     "headers": [],
     "params": [],
     "body": {
