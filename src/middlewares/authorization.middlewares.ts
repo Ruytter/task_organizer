@@ -1,5 +1,5 @@
+import { selectSession, selectRespBySessionRespId } from "../repository/authorization.repositories.js"
 import { Request, Response, NextFunction } from "express";
-import {connection} from "../database/database.js";
 
 export async function authValidation(req: Request, res: Response, next: NextFunction) {
   const authorization = req.headers.authorization;
@@ -10,10 +10,8 @@ export async function authValidation(req: Request, res: Response, next: NextFunc
   }
 
   try {
-    const { rows: sessions } = await connection.query(
-      `SELECT *  FROM sessions WHERE token = $1`,
-      [token]
-    );
+    const { rows: sessions } = await selectSession(token) 
+   
     const [session] = sessions;
 
     if (!session) {
@@ -24,10 +22,8 @@ export async function authValidation(req: Request, res: Response, next: NextFunc
       return res.status(401).send("Nescessário fazer login no sistema");
     }
 
-    const { rows: responsaveis } = await connection.query(
-      `SELECT * FROM responsavel WHERE id = $1 `,
-      [session.responsavelId]
-    );
+    const { rows: responsaveis } = await selectRespBySessionRespId(session.responsavelId) 
+    
     const [ responsavel] = responsaveis;
 
     if (!responsavel) {
